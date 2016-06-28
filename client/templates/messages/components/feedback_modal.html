@@ -1,0 +1,54 @@
+<ion-modal-view>
+  <ion-header-bar>
+    <h1 class="title">Please rate this user</h1>
+  </ion-header-bar>
+  <ion-content class="white">
+    <div class="item item-avatar no-border">
+      <img ng-src="{{ msg.rateUser.profImage }}">
+      <h2>{{ msg.rateUser.profName }}</h2>
+    </div>
+    <label class="padding item item-input item-stacked-label no-border">
+      <span class="input-label">Rating</span>
+      <div class="row" style="text-align: center;">
+        <div class="button-bar">
+          <ion-radio
+              ng-class="(msg.rating === null || msg.rating === false)  ? 'not-rated' : ''"
+              class="rate-radio"
+              icon="none"
+              ng-model="msg.rating"
+              ng-value="true"
+              name="rating" >
+            <i class="fa fa-thumbs-o-up fa-lg" style="padding: 0;" ></i>
+          </ion-radio>
+          <ion-radio
+              ng-class="(msg.rating === null || msg.rating === true) ? 'not-rated' : ''"
+              class="rate-radio"
+              icon="none"
+              ng-model="msg.rating"
+              ng-value="false"
+              name="rating" >
+            <i class="fa fa-thumbs-o-down fa-lg" style="padding: 0;" ></i>
+          </ion-radio>
+        </div>
+      </div>
+    </label>
+    <label class="item item-stacked-label padding">
+      <span class="input-label">Feedback</span>
+      <textarea
+          ng-model="msg.feedback"
+          row="5"
+          style="resize: none; height: 86px; width: 100%; overflow:hidden;"
+          type="text"
+          placeholder="Type your comments here." >
+      </textarea>
+    </label>
+    <div class="padding">
+      <button ng-disabled="msg.rating === null" ng-click="msg.rate()" class="button button-block button-light button-custom">
+        Submit
+      </button>
+      <button nav-direction="forward" ui-sref="app.chatlist" ng-click="msg.skip()" class="button button-block button-light button-outline button-custom">
+        Skip
+      </button>
+    </div>
+  </ion-content>
+</ion-modal-view>

@@ -1,0 +1,69 @@
+<ion-view view-title="">
+  <ion-header-bar class="tabs-striped tabs-top tabs-light bar-subheader no-padding">
+    <chats></chats>
+  </ion-header-bar>
+  <ion-content style="background-color: #fff;">
+    <div class="padding" style="border: none;">
+      <div class="item item-avatar no-border no-margin">
+        <img
+            ng-if="msg.otherUser.profImageID === null"
+            class="click"
+            ui-sref="app.seller({ profileId: msg.otherUser._id })"
+            ng-src="{{ msg.otherUser.profImage }}" >
+        <img
+            ng-if="msg.otherUser.profImageID != null"
+            class="click"
+            ui-sref="app.seller({ profileId: msg.otherUser._id })"
+            ng-src="{{ msg.userImg.url }}" >
+        <h2 class="click" ui-sref="app.seller({ profileId: msg.otherUser._id })" style="font-size: 16px; position: relative; top: 8px;">
+          {{ msg.otherUser.profName }}
+        </h2>
+      </div>
+      <div class="item-image click">
+        <img
+            ng-click="msg.goListing()"
+            style="width: 60%;"
+            ng-src="{{ msg.uploadImg.url }}"
+            id="content-main" >
+      </div>
+      <br >
+      <div style="text-align: center;">
+        <h4 ng-click="msg.goListing()" class="click">{{msg.chat.prodName}}</h4>
+        <h5>Agreed Price: {{msg.chat.agreedPrice | currency : "$" : 0}}</h5>
+      </div>
+      <br >
+      <button
+          ng-click="msg.itemSold()"
+          ng-disabled="msg.listing.sold === true || msg.listing.active === false"
+          ng-if="msg.listing.sold != true && msg.listing.listedBy === msg.thisUser"
+          class="button button-block button-light button-custom" >
+        Confirm Sold
+      </button>
+      <button
+          ng-disabled="msg.listing.listedBy != msg.thisUser"
+          ng-if="msg.listing.sold != true && msg.listing.listedBy != msg.thisUser"
+          class="button button-block button-clear button-balanced chat-info" >
+        Item Available
+      </button>
+      <button
+          id="sold"
+          ng-disabled="msg.listing.sold === true"
+          ng-if="msg.listing.sold === true"
+          class="button button-block button-clear button-assertive chat-info-sold" >
+        Item Sold
+      </button>
+      <button
+          ng-click="msg.cancel()"
+          ng-if="msg.listing.sold === false && msg.chat.buyerActive === true && msg.chat.sellerActive === true"
+          class="button button-block button-light button-outline button-custom" >
+        Leave Discussion
+      </button>
+      <button
+          ng-click="msg.cancel()"
+          ng-if="msg.chat.buyerActive === false || msg.chat.sellerActive === false || msg.listing.sold === true "
+          class="button button-block button-light button-outline button-custom">
+        Close
+      </button>
+    </div>
+  </ion-content>
+</ion-view>

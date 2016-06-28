@@ -1,0 +1,30 @@
+{
+  "public": {
+    "facebook": {
+      "appId": "xxx"
+    },
+    "admob": {
+      "adId": "xxx"
+    },
+    "gcm": {
+      "projectNumber": "xxx"
+    }
+  },
+  "facebook": {
+    "secret": "xxx"
+  },
+  "google": {
+      "clientId": "xxx",
+      "secret": "xxx"
+  },
+  "sendgrid": {
+    "apiKey": "xxx"
+  },
+  "here": {
+    "appId": "xxx",
+    "appCode": "xxx"
+  },
+  "gcm": {
+    "apiKey": "xxx"
+  }
+}

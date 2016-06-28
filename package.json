@@ -1,0 +1,19 @@
+{
+  "name": "tapshop",
+  "private": true,
+  "scripts": {
+    "start": "meteor run"
+  },
+  "dependencies": {
+    "angular-elastic": "^2.5.1",
+    "angular-sanitize": "^1.5.5",
+    "autolinker": "^0.26.0",
+    "geoip-lite": "^1.1.7",
+    "meteor-node-stubs": "^0.2.3",
+    "mixpanel": "^0.4.0",
+    "moment": "^2.13.0",
+    "ng-file-upload": "^12.0.4",
+    "node-geocoder": "^3.9.1",
+    "underscore": "^1.8.3"
+  }
+}

@@ -1,0 +1,63 @@
+# Meteor packages used by this project, one per line.
+# Check this file (and the other files in this directory) into your repository.
+#
+# 'meteor add' and 'meteor remove' will edit this file for you,
+# but you can also edit it by hand.
+
+# meteor libraries
+meteor-base
+session
+es5-shim
+tracker
+random
+http
+check
+email
+
+# standard libraries
+jquery
+driftyco:ionic
+angular
+pbastowski:angular-babel
+
+# ui
+angular-templates
+urigo:angular-blaze-template
+jasonaibrahim:angular-moment
+reactive-var
+fortawesome:fontawesome
+mdg:geolocation
+chrismbeckett:toastr
+jonblum:jquery-cropper
+
+# data
+mongo
+meteorhacks:search-source
+reywood:publish-composite
+jalik:ufs
+jalik:ufs-gridfs
+
+# accounts
+accounts-password
+useraccounts:ionic
+accounts-google
+accounts-facebook
+service-configuration
+softwarerero:accounts-t9n
+splendido:accounts-meld
+angular-meteor-auth
+mizzao:user-status
+
+# mobile
+mobile-experience
+netanelgilad:ng-cordova
+okland:camera-ui
+raix:push
+
+# production
+standard-minifiers
+meteorhacks:kadira
+
+#analytics
+# testing
+# routing
